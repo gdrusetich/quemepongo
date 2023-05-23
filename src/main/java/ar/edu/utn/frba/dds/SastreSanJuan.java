@@ -1,7 +1,6 @@
 package ar.edu.utn.frba.dds;
 
-
-public class SastreSanJuan implements Sastre{
+public class SastreSanJuan implements Sastre {
 
 	private static final Categoria ParteSuperior = null;
 	private static final Material Pique = null;
@@ -13,10 +12,11 @@ public class SastreSanJuan implements Sastre{
 	public Prenda fabricarParteSuperior() {
 		return new Prenda(Chomba, Pique, Lisa);
 	}
+
 	public Prenda fabricarParteInferior() {
-		return new Prenda (Pantalon, Acetado, Lisa);
+		return new Prenda(Pantalon, Acetado, Lisa);
 	}
-	
+
 	public Prenda fabricarCalzado() {
 		return new Prenda(Zapatillas, null, null);
 	}
@@ -25,4 +25,3 @@ public class SastreSanJuan implements Sastre{
 	TipoDePrenda Pantalon = new TipoDePrenda(ParteInferior);
 	TipoDePrenda Zapatillas = new TipoDePrenda(Calzado);
 }
-
