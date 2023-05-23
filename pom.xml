@@ -26,6 +26,11 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+    	<groupId>dds</groupId>
+    	<artifactId>dds.monedero</artifactId>
+    	<version>1.0-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>
