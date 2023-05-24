@@ -26,6 +26,4 @@ public class SastreSanJuan implements Sastre {
 		borrador.especificarColorPrincipal(new Color (255,255,255));
 		return borrador.crearPrenda();
 	}
-
-
 }

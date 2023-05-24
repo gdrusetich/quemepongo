@@ -8,8 +8,8 @@ public enum Material {
 	CUERO(List.of(TipoDePrenda.ZAPATOS, TipoDePrenda.POLLERA, TipoDePrenda.PANTALON)),
 	TELA(List.of(TipoDePrenda.ZAPATILLAS, TipoDePrenda.PANUELO, TipoDePrenda.POLLERA)),
 	ACETATO(List.of(TipoDePrenda.PANTALON));
-	public List<TipoDePrenda> tiposValidos;
 	
+	public List<TipoDePrenda> tiposValidos;	
 	Material(List<TipoDePrenda> tiposValidos){
 		this.tiposValidos = tiposValidos;
 	}

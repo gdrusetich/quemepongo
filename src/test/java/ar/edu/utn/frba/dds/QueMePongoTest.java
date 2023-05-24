@@ -23,9 +23,15 @@ public class QueMePongoTest {
 		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
 		Assertions.assertThrows(NoCondiceConSuCategoriaException.class, () -> borrador.especificarCategoria(Categoria.ParteInferior));
 	}
-	
+
 	@Test
 	public void unaRemeraNoPuedeSerDeCuero() {
+		Assertions.assertEquals(Material.CUERO.condiceConElTipo(TipoDePrenda.REMERA),false);
+	}
+
+	
+	@Test
+	public void noSePuedeCrearUnaRemeraDeCuero() {
 		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
 		Assertions.assertThrows(NoCondiceConSuMaterialException.class, () -> borrador.especificarMaterial(Material.CUERO));
 	}
