@@ -2,26 +2,30 @@ package ar.edu.utn.frba.dds;
 
 public class SastreSanJuan implements Sastre {
 
-	private static final Categoria ParteSuperior = null;
-	private static final Material Pique = null;
-	private static final Trama Lisa = null;
-	private static final Material Acetado = null;
-	private static final Categoria ParteInferior = null;
-	private static final Categoria Calzado = null;
-
+@Override
 	public Prenda fabricarParteSuperior() {
-		return new Prenda(Chomba, Pique, Lisa);
+	Borrador borrador = new Borrador(TipoDePrenda.CHOMBA);
+	borrador.especificarCategoria(Categoria.ParteSuperior);
+	borrador.especificarMaterial(Material.PIQUE);
+	borrador.especificarColorPrincipal(new Color (0,200,0));
+	return borrador.crearPrenda();
 	}
 
 	public Prenda fabricarParteInferior() {
-		return new Prenda(Pantalon, Acetado, Lisa);
+		Borrador borrador = new Borrador(TipoDePrenda.PANTALON);
+		borrador.especificarCategoria(Categoria.ParteInferior);
+		borrador.especificarMaterial(Material.ACETATO);
+		borrador.especificarColorPrincipal(new Color (100,100,100));
+		return borrador.crearPrenda();
 	}
 
 	public Prenda fabricarCalzado() {
-		return new Prenda(Zapatillas, null, null);
+		Borrador borrador = new Borrador(TipoDePrenda.ZAPATILLAS);
+		borrador.especificarCategoria(Categoria.Calzado);
+		borrador.especificarMaterial(Material.TELA);
+		borrador.especificarColorPrincipal(new Color (255,255,255));
+		return borrador.crearPrenda();
 	}
 
-	TipoDePrenda Chomba = new TipoDePrenda(ParteSuperior);
-	TipoDePrenda Pantalon = new TipoDePrenda(ParteInferior);
-	TipoDePrenda Zapatillas = new TipoDePrenda(Calzado);
+
 }
