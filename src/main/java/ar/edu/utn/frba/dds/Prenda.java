@@ -1,31 +1,43 @@
 package ar.edu.utn.frba.dds;
 
 public class Prenda {
-	public TipoDePrenda tipo;
-	public Material material;
-	public Categoria categoria;
-	public Trama trama;
-	int Color;
+	private Categoria categoria;
+	private TipoDePrenda tipo;
+	private Material material;
+	private Trama trama;
+	private Color colorPrincipal;
+	private Color colorSecundario;
 
-	public Prenda(TipoDePrenda tipo, Material material, Trama trama) {
+	public Prenda(Categoria categoria, TipoDePrenda tipo, Material material, Trama trama, Color colorPrincipal, Color colorSecundario) {
+		this.categoria = categoria;
 		this.tipo = tipo;
 		this.material = material;
 		this.trama = trama;
+		this.colorPrincipal = colorPrincipal;
+		this.colorSecundario = colorSecundario;
 	}
 
-	TipoDePrenda queTipo() {
+	TipoDePrenda getTipo() {
 		return this.tipo;
 	}
 
-	Material queMaterial() {
+	Material getMaterial() {
 		return this.material;
 	}
 
-	Categoria queCategoria() {
+	Categoria getCategoria() {
 		return this.categoria;
 	}
 
-	Trama queTrama() {
+	Trama getTrama() {
 		return this.trama;
+	}
+	
+	Color getColorPrincipal() {
+		return this.colorPrincipal;
+	}
+	
+	Color getColorSecundario() {
+		return this.colorSecundario;
 	}
 }

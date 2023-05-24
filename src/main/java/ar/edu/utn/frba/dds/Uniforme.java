@@ -11,7 +11,7 @@ public class Uniforme {
 		this.calzado = fabricarCalzado;
 	}
 
-	Uniforme fabricar(Sastre unSastre) {
+	public Uniforme fabricar(Sastre unSastre) {
 		return new Uniforme(unSastre.fabricarParteSuperior(), unSastre.fabricarParteInferior(),
 				unSastre.fabricarCalzado());
 	}
