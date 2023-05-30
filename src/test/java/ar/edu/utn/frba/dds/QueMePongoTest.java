@@ -18,22 +18,29 @@ public class QueMePongoTest {
 		Prenda remeraBlancaLisa = borrador.crearPrenda();
 		Assertions.assertEquals(remeraBlancaLisa.getCategoria() == Categoria.ParteSuperior, true);
 	}
+
+	@Test
+	public void noSePuedeCrearUnaRemeraDeCuero() {
+		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
+		Assertions.assertThrows(NoCondiceConSuMaterialException.class, () -> borrador.especificarMaterial(Material.CUERO));
+	}
+	
 	@Test
 	public void unaRemeraNoPuedeSerParteInferior() {
 		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
 		Assertions.assertThrows(NoCondiceConSuCategoriaException.class, () -> borrador.especificarCategoria(Categoria.ParteInferior));
 	}
 
+
+	
 	@Test
 	public void unaRemeraNoPuedeSerDeCuero() {
 		Assertions.assertEquals(Material.CUERO.condiceConElTipo(TipoDePrenda.REMERA),false);
 	}
-
 	
 	@Test
-	public void noSePuedeCrearUnaRemeraDeCuero() {
-		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
-		Assertions.assertThrows(NoCondiceConSuMaterialException.class, () -> borrador.especificarMaterial(Material.CUERO));
+	public void unaRemeraPuedeSerDeAlgodon() {
+		Assertions.assertEquals(Material.ALGODON.condiceConElTipo(TipoDePrenda.REMERA), true);
 	}
 }
 
