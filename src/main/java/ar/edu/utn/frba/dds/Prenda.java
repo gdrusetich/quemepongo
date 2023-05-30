@@ -8,6 +8,7 @@ public class Prenda {
 	private Color colorPrincipal;
 	private Color colorSecundario;
 	private Formalidad formalidad;
+	private int temperaturaMaximaAdecuada;
 
 	public Prenda(Categoria categoria, TipoDePrenda tipo, Material material, Trama trama, Formalidad formalidad, Color colorPrincipal, Color colorSecundario) {
 		this.categoria = categoria;
@@ -45,5 +46,9 @@ public class Prenda {
 	
 	Formalidad getFormalidad() {
 		return this.formalidad;
+	}
+	
+	boolean esAdecuada(Temperatura unaTemperatura){
+		return unaTemperatura.getValor() <= this.temperaturaMaximaAdecuada;
 	}
 }
