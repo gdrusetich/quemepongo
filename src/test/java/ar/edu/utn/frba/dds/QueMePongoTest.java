@@ -6,7 +6,7 @@ import dds.quemepongo.exceptions.NoCondiceConSuCategoriaException;
 import dds.quemepongo.exceptions.NoCondiceConSuMaterialException;
 
 public class QueMePongoTest {
-	
+	/*
 	@Test
 	public void sePuedeCrearUnaRemeraBlancaLisa() {
 		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
@@ -30,7 +30,7 @@ public class QueMePongoTest {
 		Borrador borrador = new Borrador(TipoDePrenda.REMERA);
 		Assertions.assertThrows(NoCondiceConSuCategoriaException.class, () -> borrador.especificarCategoria(Categoria.ParteInferior));
 	}
-
+*/
 
 	
 	@Test

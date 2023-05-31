@@ -12,10 +12,16 @@ public interface MotorSugerencias {
 	
 		
 	default List<Sugerencia> generarSugerencias(Usuario unUsuario, String ciudad){
-		Temperatura temperaturaDelDia = ElegirServicioClimatico.getServicioClimatico().getTemperaturaEnLaCiudad(ciudad);
-		List<Prenda> prendasSuperiores = this.getPrendasValidas(unUsuario).stream().filter(prenda -> prenda.getCategoria() == Categoria.ParteSuperior && prenda.esAdecuada(temperaturaDelDia)).collect(Collectors.toList());
-		List<Prenda> prendasInferiores = this.getPrendasValidas(unUsuario).stream().filter(prenda -> prenda.getCategoria() == Categoria.ParteInferior&& prenda.esAdecuada(temperaturaDelDia)).collect(Collectors.toList());
-		List<Prenda> calzados = this.getPrendasValidas(unUsuario).stream().filter(prenda -> prenda.getCategoria() == Categoria.Calzado && prenda.esAdecuada(temperaturaDelDia)).collect(Collectors.toList());
+		Temperatura temperaturaDelDia = ElegirServicioMeteorologico.getServicioClimatico().getTemperaturaEnLaCiudad(ciudad);
+		
+		List<Prenda> prendasSuperiores = this.getPrendasValidas(unUsuario).stream()
+				.filter(prenda -> prenda.getCategoria() == Categoria.ParteSuperior && prenda.aptaParaTemperatura(temperaturaDelDia)).collect(Collectors.toList());
+		
+		List<Prenda> prendasInferiores = this.getPrendasValidas(unUsuario).stream()
+				.filter(prenda -> prenda.getCategoria() == Categoria.ParteInferior&& prenda.aptaParaTemperatura(temperaturaDelDia)).collect(Collectors.toList());
+		
+		List<Prenda> calzados = this.getPrendasValidas(unUsuario).stream()
+				.filter(prenda -> prenda.getCategoria() == Categoria.Calzado && prenda.aptaParaTemperatura(temperaturaDelDia)).collect(Collectors.toList());
 		
 	    List<List<Prenda>> combinaciones = Lists.cartesianProduct(prendasSuperiores,prendasInferiores, calzados);
 		

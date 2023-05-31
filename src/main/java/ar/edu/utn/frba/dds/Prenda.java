@@ -48,7 +48,7 @@ public class Prenda {
 		return this.formalidad;
 	}
 	
-	boolean esAdecuada(Temperatura unaTemperatura){
+	boolean aptaParaTemperatura(Temperatura unaTemperatura){
 		return unaTemperatura.getValor() <= this.temperaturaMaximaAdecuada;
 	}
 }

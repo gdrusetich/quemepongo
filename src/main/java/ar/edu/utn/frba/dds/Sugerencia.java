@@ -28,5 +28,8 @@ public Prenda getCalzado() {
 	return this.calzado;
 }
 
+boolean esAptaParaTemperatura(Temperatura unaTemperatura) {
+	return this.parteSuperior.aptaParaTemperatura(unaTemperatura) && this.parteInferior.aptaParaTemperatura(unaTemperatura) && this.calzado.aptaParaTemperatura(unaTemperatura);
+}
 
 }
