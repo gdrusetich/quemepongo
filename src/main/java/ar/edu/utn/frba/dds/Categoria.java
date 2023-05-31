@@ -4,19 +4,19 @@ import java.util.List;
 
 public enum Categoria {
 
-		ParteSuperior(List.of(TipoDePrenda.REMERA, TipoDePrenda.CAMISA, TipoDePrenda.CHOMBA, TipoDePrenda.MUSCULOSA)),
-		ParteInferior(List.of(TipoDePrenda.PANTALON)),
-		Calzado(List.of(TipoDePrenda.ZAPATILLAS, TipoDePrenda.ZAPATOS, TipoDePrenda.POLLERA)),
-		Accesorio(List.of(TipoDePrenda.PANUELO));
-	
+	ParteSuperior(List.of(TipoDePrenda.Remera, TipoDePrenda.Camisa, TipoDePrenda.Chomba, TipoDePrenda.Musculosa)),
+	ParteInferior(List.of(TipoDePrenda.Pantalon)),
+	Calzado(List.of(TipoDePrenda.Zapatillas, TipoDePrenda.Zapatos, TipoDePrenda.Pollera)),
+	Accesorio(List.of(TipoDePrenda.Panuelo));
+
 	private final List<TipoDePrenda> condecirCategoriaConTipo;
-	
-	Categoria(List<TipoDePrenda> condecirTipos){
+
+	Categoria(List<TipoDePrenda> condecirTipos) {
 		this.condecirCategoriaConTipo = condecirTipos;
 	}
-	
+
 	public boolean condiceConElTipo(TipoDePrenda untipo) {
 		return condecirCategoriaConTipo.contains(untipo);
 	}
-	
+
 }

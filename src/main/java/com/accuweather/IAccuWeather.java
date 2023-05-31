@@ -3,5 +3,5 @@ package com.accuweather;
 import java.util.Map;
 
 public interface IAccuWeather {
-Map<String, Object> getWeather(String ciudad);
+	Map<String, Object> getWeather(String ciudad);
 }

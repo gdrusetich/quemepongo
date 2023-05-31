@@ -1,5 +1,5 @@
 package ar.edu.utn.frba.dds;
 
 public enum TipoDePrenda {
-REMERA, PANTALON, ZAPATILLAS, ZAPATOS, CAMISA, CHOMBA, MUSCULOSA, PANUELO, POLLERA;
+	Remera, Pantalon, Zapatillas, Zapatos, Camisa, Chomba, Musculosa, Panuelo, Pollera;
 }
