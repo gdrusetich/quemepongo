@@ -20,11 +20,11 @@ public class ServicioMeteorologicoAccuWeather implements ServicioMeteorologico {
 	    this.ultimasRespuestas = new HashMap<>();
 	  }
 
-	  public EstadoDelTiempo obtenerCondicionesClimaticas(String direccion) {
-	    if (!this.ultimasRespuestas.containsKey(direccion) || this.ultimasRespuestas.get(direccion).expiro()) {
-	      ultimasRespuestas.put(direccion, this.consultarApi(direccion));
+	  public Temperatura getTemperaturaEnLaCiudad(String ciudad) {
+	    if (!this.ultimasRespuestas.containsKey(ciudad) || this.ultimasRespuestas.get(ciudad).expiro()) {
+	      ultimasRespuestas.put(ciudad, this.consultarApi(ciudad));
 	    }
-	    return this.ultimasRespuestas.get(direccion).getTemperaturaEnLaCiudad("Buenos Aires");
+	    return this.ultimasRespuestas.get(ciudad).unaTemperatura();
 	  }
 
 	  private LocalDateTime proximaExpiracion() {
