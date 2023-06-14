@@ -1,12 +1,11 @@
 package ar.edu.utn.frba.dds;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import dds.quemepongo.exceptions.NoCondiceConSuCategoriaException;
 import dds.quemepongo.exceptions.NoCondiceConSuMaterialException;
 
 public class QueMePongoTest {
-/*
+
 	@Test
 	public void sePuedeCrearUnaPrendaSuperior() {
 		Borrador borrador = new Borrador(TipoDePrenda.Remera);
@@ -17,20 +16,9 @@ public class QueMePongoTest {
 		borrador.especificarColorPrincipal(new Color(0, 0, 1));
 		borrador.especificarColorSecundario(new Color(1, 1, 0));
 		Prenda remeraBlancaLisa = borrador.crearPrenda();
-		Assertions.assertEquals(remeraBlancaLisa.getCategoria() == Categoria.ParteSuperior, true);
+		Assertions.assertEquals(remeraBlancaLisa.getCategoria() , Categoria.ParteSuperior);
 	}
-*/
-	
-	@Test
-	public void sePuedeHacerUnNewDeRemera() {
-		Prenda remeraNegraEstampada = new Prenda(Categoria.ParteSuperior, TipoDePrenda.Remera, Material.ALGODON, Trama.Estampado, Formalidad.Informal, new Color(0,0,0), null);
-		Assertions.assertEquals(remeraNegraEstampada.getCategoria() == Categoria.ParteSuperior, true);
-		Assertions.assertEquals(remeraNegraEstampada.getTipo() == TipoDePrenda.Remera, true);
-		Assertions.assertEquals(remeraNegraEstampada.getMaterial() == Material.ALGODON, true);
-		Assertions.assertEquals(remeraNegraEstampada.getTrama() == Trama.Estampado, true);
-		Assertions.assertEquals(remeraNegraEstampada.getFormalidad() == Formalidad.Informal, true);
-	}
-	
+
 	@Test
 	public void sePuedeCrearUnaRemeraBlancaLisaConBorrador() {
 		Borrador borrador = new Borrador(TipoDePrenda.Remera);
@@ -40,8 +28,20 @@ public class QueMePongoTest {
 		borrador.especificarFormalidad(Formalidad.Informal);
 		borrador.especificarColorPrincipal(new Color(255, 255, 255));
 		Prenda remeraBlancaLisa = borrador.crearPrenda();
-		Assertions.assertEquals(remeraBlancaLisa.getTipo() == TipoDePrenda.Remera, true);
+		Assertions.assertEquals(remeraBlancaLisa.getTipo(), TipoDePrenda.Remera);
 	}
+	
+	@Test
+	public void sePuedeHacerUnNewDeRemera() {
+		Prenda remeraNegraEstampada = new Prenda(Categoria.ParteSuperior, TipoDePrenda.Remera, Material.ALGODON, Trama.Estampado, Formalidad.Informal, new Color(0,0,0), null);
+		Assertions.assertEquals(remeraNegraEstampada.getCategoria(), Categoria.ParteSuperior);
+		Assertions.assertEquals(remeraNegraEstampada.getTipo(), TipoDePrenda.Remera);
+		Assertions.assertEquals(remeraNegraEstampada.getMaterial(), Material.ALGODON);
+		Assertions.assertEquals(remeraNegraEstampada.getTrama(), Trama.Estampado);
+		Assertions.assertEquals(remeraNegraEstampada.getFormalidad(), Formalidad.Informal);
+	}
+	
+
 	
 	
 	@Test

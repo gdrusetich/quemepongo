@@ -5,35 +5,26 @@ import java.util.List;
 
 public class Guardarropa {
 	List<Prenda> guardarropa = new ArrayList<>();
-	List<Propuesta> propuestas = new ArrayList<>();
 
 
 	public Guardarropa(List<Prenda> unGuardarropa) {
 		this.guardarropa = unGuardarropa;
+	}
+	
+	void compartirCon(Usuario unUsuario) {
+		unUsuario.agregarGuardarropa(this);
 	}
 
 	List<Prenda> getPrendas() {
 		return this.guardarropa;
 	}
 
-	void propuestaDeQuitar(Prenda unaPrenda) {
-
-	}
 	void quitarPrenda(Prenda unaPrenda) {
-		guardarropa.remove(unaPrenda);
+		this.guardarropa.remove(unaPrenda);
 	}
 	
 	void agregarPrenda(Prenda unaPrenda) {
-		guardarropa.add(unaPrenda);
-	}
-	
-	
-	void agregarPropuestaTentativamente(Prenda prenda, Guardarropa unGuardarropa) {
-		this.propuestas.add(new Propuesta(prenda, TipoPropuesta.AGREGAR, unGuardarropa));
-	}
-
-	void quitarPropuestaTentativamente(Prenda prenda, Guardarropa unGuardarropa) {
-		this.propuestas.add(new Propuesta(prenda, TipoPropuesta.REMOVER, unGuardarropa));
+		this.guardarropa.add(unaPrenda);
 	}
 
 }

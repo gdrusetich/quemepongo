@@ -6,8 +6,8 @@ import dds.quemepongo.exceptions.NoCondiceConSuCategoriaException;
 import dds.quemepongo.exceptions.NoCondiceConSuMaterialException;
 
 public class Borrador {
-	private Categoria categoria;
 	private TipoDePrenda tipo;
+	private Categoria categoria;
 	private Material material;
 	private Trama trama;
 	private Formalidad formalidad;
@@ -23,9 +23,12 @@ public class Borrador {
 
 	public void especificarCategoria(Categoria unaCategoria) {
 		Preconditions.checkNotNull(unaCategoria, "Debe elegir una categoría");
-		this.validarCategoria(this.categoria);
-		this.categoria = unaCategoria;
+		if (!unaCategoria.condiceConElTipo(this.tipo)) {
+			throw new NoCondiceConSuCategoriaException("La categoria no condice con su tipo");		
+		} else {
 
+		this.categoria = unaCategoria;
+		}
 	}
 	//Deberia ser private.
 	public void validarCategoria(Categoria categoriaAEvaluar) {
@@ -35,16 +38,18 @@ public class Borrador {
 	}
 
 	public void especificarTipo(TipoDePrenda unTipo) {
-		Preconditions.checkNotNull(tipo, "Debe elegir un tipo de prenda");
+		Preconditions.checkNotNull(unTipo, "Debe elegir un tipo de prenda");
 		this.tipo = unTipo;
 
 	}
 
 	public void especificarMaterial(Material unMaterial) {
-		Preconditions.checkNotNull(material, "Debe elegir un material");
-		this.validarMaterial(this.material);
+		Preconditions.checkNotNull(unMaterial, "Debe elegir un material");
+		if(!unMaterial.condiceConElTipo(this.tipo)) {
+			throw new NoCondiceConSuMaterialException("El materialno condice con su tipo");
+		} else {
 		this.material = unMaterial;
-
+		}
 
 	}
 //Deberia ser private.
@@ -59,12 +64,12 @@ public class Borrador {
 	}
 
 	public void especificarFormalidad(Formalidad unaFormalidad) {
-		Preconditions.checkNotNull(formalidad, "Debe elegir una formalidad");
+		Preconditions.checkNotNull(unaFormalidad, "Debe elegir una formalidad");
 		this.formalidad = unaFormalidad;
 	}
 	
 	public void especificarColorPrincipal(Color unColorPrincipal) {
-		Preconditions.checkNotNull(colorPrincipal, "Debe elegir un color principal");
+		Preconditions.checkNotNull(unColorPrincipal, "Debe elegir un color principal");
 		this.colorPrincipal = unColorPrincipal;
 
 	}
@@ -77,8 +82,8 @@ public class Borrador {
 //		Preconditions.checkNotNull(this.categoria, "Debe elegir una categoría");
 //		Preconditions.checkNotNull(this.material, "Debe elegir un material");
 //		Preconditions.checkNotNull(this.colorPrincipal, "Debe elegir un color principal");
-		prendaBorrador = new Prenda(categoria, tipo, material, trama, formalidad, colorPrincipal, colorSecundario);
-		return prendaBorrador;
+		this.prendaBorrador = new Prenda(this.categoria, this.tipo, this.material, this.trama, this.formalidad, this.colorPrincipal, this.colorSecundario);
+		return this.prendaBorrador;
 	}
 
 }

@@ -6,7 +6,7 @@ public enum Material {
 	ALGODON(List.of(TipoDePrenda.Remera, TipoDePrenda.Camisa, TipoDePrenda.Musculosa)),
 	PIQUE(List.of(TipoDePrenda.Chomba)),
 	CUERO(List.of(TipoDePrenda.Zapatos, TipoDePrenda.Pollera, TipoDePrenda.Pantalon)),
-	TELA(List.of(TipoDePrenda.Zapatillas, TipoDePrenda.Panuelo, TipoDePrenda.Pollera)),
+	TELA(List.of(TipoDePrenda.Zapatillas, TipoDePrenda.Panuelo, TipoDePrenda.Pollera, TipoDePrenda.Pantalon)),
 	ACETATO(List.of(TipoDePrenda.Pantalon));
 
 	public List<TipoDePrenda> tiposValidos;

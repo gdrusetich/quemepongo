@@ -10,7 +10,7 @@ public class AsesorDeImagen {
 	}
 
 	public Atuendo sugerirAtuendo(Usuario unUsuario, String unaCiudad) {
-		Temperatura temperaturaDelDia = this.servicioMeteorologico.getTemperaturaEnLaCiudad(unaCiudad);
+		Temperatura temperaturaDelDia = this.servicioMeteorologico.obtenerCondicionesClimaticas(unaCiudad);
 		List<Atuendo> combinaciones = unUsuario.generarSugerencias(unaCiudad);
 		return combinaciones.stream().filter(combinacion -> combinacion.esAptaParaTemperatura(temperaturaDelDia))
 				.findFirst().get();

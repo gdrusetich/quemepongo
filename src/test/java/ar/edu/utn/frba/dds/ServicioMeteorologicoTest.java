@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServicioMeteorologicoTest {
-
+	
 	@Test
 	void sePuedenGenerarSugerenciasParaBsAsCon18Grados() {
 		ServicioMeteorologicoAccuWeather servicio = Mockito.mock(ServicioMeteorologicoAccuWeather.class);
@@ -36,6 +36,5 @@ public class ServicioMeteorologicoTest {
 		resultado.put("Temperature", 15);
 
 		Mockito.when(api.getWeather("Buenos Aires")).thenReturn(resultado);
-
 	}
 }
