@@ -2,27 +2,22 @@ package ar.edu.utn.frba.dds;
 
 public class Temperatura {
 
-	int unitType;
-	int value;
-	String unit;
+	UnidadTemperatura unidad;
+	Double valor;
 
-	public Temperatura(int unitType, int value, String unit) {
-		this.unitType= unitType;
-		this.value = value;
-		this.unit= unit;
+	public Temperatura(UnidadTemperatura unidad, Double valor) {
+		this.unidad = unidad;
+		this.valor = valor;
 	}
 
-	public int getUnitType() {
-		return this.unitType;
+	public UnidadTemperatura getUnidad() {
+		return this.unidad;
 	}
 
-	public int getValue() {
-		return this.value;
+	public double getValue() {
+		return this.valor;
 	}
 	
-	public String unit() {
-		return this.unit;
-	}
 
 }
 

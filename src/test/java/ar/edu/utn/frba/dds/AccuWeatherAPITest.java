@@ -2,6 +2,7 @@ package ar.edu.utn.frba.dds;
 
 import com.accuweather.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,11 +13,11 @@ public class AccuWeatherAPITest {
 
 	@Test
 	void sePuedeConsultarAAccuWeatherElTiempoDeBuenosAires() {
-		var cliente = new AccuWeatherAPICliente();
-		var resultado = cliente.getWeather("Buenos Aires");
+		AccuWeatherAPI apiClima = new AccuWeatherAPI();
+		List<Map<String, Object>> estadoDelTiempo = apiClima.getWeather("Buenos Aires, Argentina");  
+		Assertions.assertEquals(estadoDelTiempo.get(0).get("Temperature"),new HashMap<String, Object>()); 
 
-		Assertions.assertNotNull(resultado);
-//		Assertions.assertEquals(resultado.get("Temperature"), 18);
+
 	}
 	
 	@Test
